@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include "conio.h"
+#include "stdlib.h"
+#include <iostream>
+
+using namespace std;
+
+void main()
+{float salario[100],S,Prom;
+int i,N,salariomin=1400;
+S=0;
+cout<<"Ingrese la cantidad de trabajadores"<<endl;
+cin>>N;
+  for(i=0;i<N;i++)
+  {  
+	  cout<<"Salario trabajador"<<i+1<<":";
+	  cin>>salario[i];
+  }
+	for(i=0;i<N;i++)
+	{salario[i]=salario[i]*0.879;
+       if(salario[i]>=(2*salariomin))
+	    { S=S + salario[i]*0.87; 
+	     }
+	}
+	Prom=S/N;
+	cout<<"El promedio de los salarios de los "<<N<<" trabajadores es "<<Prom; 
+
+getch();
+}
