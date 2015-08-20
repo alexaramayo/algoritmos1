@@ -1,0 +1,42 @@
+#include "stdafx.h"
+#include "conio.h"
+#include "stdlib.h"
+#include <iostream>
+#define AFP 0.121
+#define IVA 0.13
+#define Smin 1420
+
+using namespace std;
+
+void main()
+{float SB,S,Prom;
+int i=0,N;
+char op;
+S=0;
+
+    do{
+
+	cout<<"Ingrese el salario bruto"<<endl;
+	cin>>SB;
+		if(SB>15000)
+			{ SB=SB-SB*(AFP+0.01+IVA);
+		    }
+		  else{
+		     if(SB>2*Smin)
+			   {  SB=SB*(1-IVA-AFP);
+			  }
+			 else{
+			   SB=SB*(1-AFP);
+			 }
+		  }
+		  i++;
+		  S=S+SB;
+		  cout<<"si desea continuar presione S ";
+		  cin>>op;
+	}while(op=='S');
+	Prom=S/i;
+	cout<<"El promedio de los salarios de los "<<i<<" trabajadores es "<<Prom; 
+
+getch();
+}
+
