@@ -1,0 +1,39 @@
+#include "stdafx.h"
+#include "conio.h"
+#include "stdlib.h"
+#include <iostream>
+#define IVA 0.13
+#define AFP 0.121
+#define Smin 1420
+	using namespace std;
+
+void main()
+{float SB,Prom,S;
+int i,N;
+S=0;
+cout<<"Ingrese la cantidad de trabajadores"<<endl;
+cin>>N;
+  for(i=0;i<N;i++)
+  {  
+	  cout<<"Salario trabajador"<<i+1<<":";
+	  cin>>SB;
+  }
+	for(i=0;i<N;i++)
+		{ SB=SB*(1-AFP);
+		  if(SB>15000)
+			{ SB=SB*(1-0.01);
+			 SB=SB*(1-IVA);
+		    }
+		  else{
+		     if(SB>=2*Smin)
+			   {  SB=SB*(1-IVA);
+			 
+			  }
+			}
+	  S=S+ SB;
+	}	
+	Prom=S/N;
+	cout<<"El promedio de los salarios de los "<<N<<" trabajadores es "<<Prom; 
+
+getch();
+}
