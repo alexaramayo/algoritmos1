@@ -19,17 +19,17 @@ cin>>N;
 	  cin>>SB;
   }
 	for(i=0;i<N;i++)
-		{ SB=SB*(1-AFP);
-		  if(SB>15000)
-			{ SB=SB*(1-0.01);
-			 SB=SB*(1-IVA);
+		{ if(SB>15000)
+			{ SB=SB-SB*(AFP+0.01+IVA);
 		    }
 		  else{
-		     if(SB>=2*Smin)
-			   {  SB=SB*(1-IVA);
-			 
+		     if(SB>2*Smin)
+			   {  SB=SB*(1-IVA-AFP);
 			  }
-			}
+			 else{
+			   SB=SB*(1-AFP);
+			 }
+		  }
 	  S=S+ SB;
 	}	
 	Prom=S/N;
