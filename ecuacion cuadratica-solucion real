@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include "conio.h"
+#include "math.h"
+#include <iostream>
+
+using namespace std;
+
+void cuadratica (float a, float b, float c,float x, float &x1, float &x2);
+void main()
+{float a,b,c,d,x1,x2;
+	cout<<"Ingrese los valores de a";
+	cin>>a;
+	cout<<"Ingrese los valores de b";
+	cin>>b;
+	cout<<"Ingrese los valores de c";
+	cin>>c;
+	d=pow(b,2)-4*a*c;
+	if(d<0)
+	{ cout<<"Error, termino imaginario";
+	}
+	else{
+	cuadratica(a,b,c,d,x1,x2);
+	cout<<"x1= "<<x1;
+	cout<<"x2= "<<x2;
+	}
+	getch();
+}
+
+void cuadratica (float a, float b, float c, float x,float &x1, float &x2)
+{
+  x1=(-b+sqrt(x))/(2*a);
+  x2=(-b-sqrt(x))/(2*a);
+}
