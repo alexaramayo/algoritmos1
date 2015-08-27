@@ -21,8 +21,8 @@ void main()
 	if(d<0)
 	{ d=d*(-1);
 	 solimaginaria(a,b,c,d,x1,x2);
-	 cout<<"x1= "<<x1<<"+"<<x2<<endl;
-	 cout<<"x2= "<<x1<<"-"<<x2<<endl;
+	 cout<<"x1= "<<x1<<"+"<<x2<<"i"<<endl;
+	 cout<<"x2= "<<x1<<"-"<<x2<<"i"<<endl;
 	
 	}
 	else{
